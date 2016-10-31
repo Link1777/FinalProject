@@ -1,3 +1,15 @@
 body#main{
     background: center url("images/field.jpg") no-repeat green;
 }
+body#forest{
+    background: center url("images/forest.jpg") no-repeat darkslategray;
+}
+body#town{
+    background: center url("images/town.jpg") no-repeat blue;
+}
+body#cave{
+    background: center url("images/cave.jpg") no-repeat greenyellow;
+}
+p#parForest{
+    text-align: center;
+}

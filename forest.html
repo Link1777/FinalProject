@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Forest Level</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body id="forest">
+<p id="parForest">
+    You walk into the forest until you come to the largest tree you have ever seen.<br>
+    Next to the tree is a dead body and a treasure chest.<br>
+    A lone squirrel sits next to the dead person starring directly at you<br>
+    What will you do?
+</p>
+Select task(s):
+<table>
+    <tr><td><input type="checkbox" id="chkExplore"></td>          <td>Explore the forest</td>    <td><div id="divExplore"></div></td></tr>
+    <tr><td><input type="checkbox" id="chkOpenChest"></td>         <td>Open the Chest</td>    <td><div id="divOpenChest"></div></td></tr>
+    <tr><td><input type="checkbox" id="chkSearchCorpse"></td>     <td>Search the Corpse</td>    <td><div id="divSearchCorpse"></div></td></tr>
+    <tr><td><input type="checkbox" id="chkTalkAnimal"></td>            <td>Talk to the Squirrel</td>    <td><div id="divTalkAnimal"></div></td></tr>
+    <tr><td><input type="checkbox" id="chkClimbTree"></td>         <td>Climb the tree</td>    <td><div id="divClimbTree"></div></td></tr>
+</table>
+<div id="outForest"></div>
+
 
 </body>
 </html>
