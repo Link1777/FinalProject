@@ -10,6 +10,15 @@ body#town{
 body#cave{
     background: center url("images/cave.jpg") no-repeat greenyellow;
 }
+body#pub{
+    background: darkslategray;
+}
+body#inCave{
+    background: darkslategray;
+}
+body#litCave{
+    background: darkslategray;
+}
 p#parForest{
     text-align: center;
 }
