@@ -22,3 +22,7 @@ body#litCave{
 p#parForest{
     text-align: center;
 }
+input#chest1{
+    opacity: 0;
+    cursor: pointer;
+}
