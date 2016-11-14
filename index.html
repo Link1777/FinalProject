@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <title>Simple RPG</title>
 </head>
-<body id="main">
+<body onload = "PageLoad()" onunload ="SaveResults()" id="main" >
+<div id="txtName"></div>
+<div id="divGold"></div>
 <p>
     You begin your journey in the middle of a field.<br>
     Off in the distance you see a forest, a town, and a cave.<br>
@@ -28,5 +30,7 @@
 
 <input type="button" id="Go" value="Go">
 <input type="button" id="chest1" onclick="HiddenChest();">
+<input type="button" value="Delete Character" onclick="DeleteInformation()">
+<div id="divOut"></div>
 </body>
 </html>
