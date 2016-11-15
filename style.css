@@ -26,3 +26,5 @@ input#chest1{
     opacity: 0;
     cursor: pointer;
 }
+div#txtName{ text-align: right}
+div#divGold{ text-align: right}

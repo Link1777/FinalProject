@@ -69,7 +69,7 @@ function PageLoad(){
     }
 
     if (localStorage.getItem(GOLD) != null){
-        gold = parseFloat(localStorage.getItem(gold));
+        gold = parseFloat(localStorage.getItem(GOLD));
     } else {
         gold = 0;
     }
