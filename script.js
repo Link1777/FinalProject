@@ -88,8 +88,24 @@ function Go() {
     ChangeLocation();
 }
 function SaveCharacter() {
-    
+    if ($("radSoldier").checked == true){
+        localStorage.setItem(CHARACTER, "Soldier");
+    }else if ($("radMage").checked == true) {
+        localStorage.setItem(CHARACTER, "Mage");
+    }else {
+        alert("No character selected. Please select a character");
+        window.location.href = "index.html"
+    }
 }
 function ChangeLocation() {
-    
+    if ($("radForest").checked == true){
+        window.location.href = "forest.html"
+    }else if ($("radTown").checked == true) {
+        window.location.href = "town.html"
+    }else if ($("radCave").checked == true){
+        window.location.href = "Cave.html"
+    }else {
+        alert("No character selected. Please select a character");
+        window.location.href = "index.html"
+    }
 }
