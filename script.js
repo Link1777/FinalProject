@@ -1,7 +1,9 @@
 var gold;
 var name;
+var char;
 const USER_NAME = "userName";
 const GOLD = "gold";
+const CHARACTER = char;
 var dataChanged;
 
 function $(a) {
@@ -82,5 +84,12 @@ function DeleteInformation(){
     window.location.href = "register.html";
 }
 function Go() {
-
+    SaveCharacter();
+    ChangeLocation();
+}
+function SaveCharacter() {
+    
+}
+function ChangeLocation() {
+    
 }
