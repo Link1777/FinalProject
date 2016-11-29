@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js" type="text/javascript"></script>
 <head>
     <meta charset="UTF-8">
     <title>Inside the Cave</title>
 </head>
-<body id="inCave">
+<body onload = "PageLoad()" onunload ="SaveResults()" id="inCave">
+<div id="txtName"></div>
+<div id="divGold"></div>
 <p>
     You enter the cave, it's pitch black and you can't see anything.<br>
     What do you do?

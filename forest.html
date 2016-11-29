@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js" type="text/javascript"></script>
 <head>
     <meta charset="UTF-8">
     <title>Forest Level</title>
 </head>
-<body id="forest">
+<body onload = "PageLoad()" onunload ="SaveResults()" id="forest">
+<div id="txtName"></div>
+<div id="divGold"></div>
 <p id="parForest">
     You walk into the forest until you come to the largest tree you have ever seen.<br>
     Next to the tree is a dead body and a treasure chest.<br>
@@ -20,7 +23,9 @@ Select task(s):
     <tr><td><input type="checkbox" id="chkTalkAnimal"></td>            <td>Talk to the Squirrel</td>    <td><div id="divTalkAnimal"></div></td></tr>
     <tr><td><input type="checkbox" id="chkClimbTree"></td>         <td>Climb the tree</td>    <td><div id="divClimbTree"></div></td></tr>
 </table>
-<input type="button" id="btnForestLeave" value="Go back to the field">
+<input type="button" id="btnForestLeave" value="Go back to the field" onclick="Field()"><br>
+
+<input type="button" id="btnForestSelect" value="Make Selection" onclick="Forest()">
 
 <div id="outForest"></div>
 

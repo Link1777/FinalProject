@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js" type="text/javascript"></script>
 <head>
     <meta charset="UTF-8">
     <title>Town Level</title>
 </head>
-<body id="town">
+<body onload = "PageLoad()" onunload ="SaveResults()" id="town">
+<div id="txtName"></div>
+<div id="divGold"></div>
 <p>
     You finally make it to town, you see a beggar just outside town.<br>
     Down the street are a few different shops, right in front of you is a fountain,<br>
@@ -20,7 +23,7 @@ How will you proceed:
     <tr><td><input type="checkbox" id="chkPub"></td>         <td>Enter the pub</td>    <td><div id="divPub"></div></td></tr>
 </table>
 
-<input type="button" id="btnTownLeave" value="Go back to the field">
+<input type="button" id="btnTownLeave" value="Go back to the field" onclick="Field()">
 
 <div id="outTown"></div>
 </body>
