@@ -1,13 +1,13 @@
 var gold;
 var name;
 var char;
-var exp;
 var hp;
+var lantern;
 const USER_NAME = "userName";
 const GOLD = "gold";
 const CHARACTER = "char";
-const EXP = "exp";
 const HP = "hp";
+const LANTERN = "lantern";
 var dataChanged;
 
 function $(a) {
@@ -83,8 +83,16 @@ function PageLoad(){
     } else {
         gold = 0;
     }
-
     document.getElementById("divGold").innerHTML = gold;
+
+    if (localStorage.getItem(HP) != null){
+        hp = parseFloat(localStorage.getItem(HP));
+    }else {hp = 10}
+    document.getElementById("divHp").innerHTML = hp;
+
+    if (localStorage.getItem(LANTERN) != null){
+        hp = parseFloat(localStorage.getItem(LANTERN));
+    }else {lantern = false}
 }
 function DeleteInformation(){
     localStorage.clear();
@@ -127,20 +135,74 @@ function Field() {
 }
 function Forest() {
     if ($("chkExplore").checked == true){
-        $("divExplore").innerHTML = "";
+        $("divExplore").innerHTML = "you find 5 gold";
+        IncreaseGold(5);
+        SaveGold();
     }
     if ($("chkOpenChest").checked == true){
-        $("divOpenChest").innerHTML = "Obviously there is no treasure in here, that would be too easy. You lose 2 HP arbatraraly";
+        $("divOpenChest").innerHTML = "Obviously there is no treasure in here, that would be too easy. You lose 2 HP arbitrarily";
         DecreaseHp(2);
         SaveHp();
     }
     if ($("chkSearchCorpse").checked == true){
         $("divSearchCorpse").innerHTML = "You found rigamortis, -2HP";
+        DecreaseHp(2);
+        SaveHp();
     }
     if ($("chkTalkAnimal").checked == true){
-        $("divTalkAnimal").innerHTML = "";
+        $("divTalkAnimal").innerHTML = "The squirrel goes crazy and attacks, you lose 2hp";
+        DecreaseHp(2);
+        SaveHp();
     }
     if ($("chkClimbTree").checked == true){
-        $("divClimbTree").innerHTML = "";
+        $("divClimbTree").innerHTML = "You find a bird's nest in the tree with some gold";
+        IncreaseGold(RandomInt(0,10));
+        SaveGold();
     }
+}
+function Town() {
+    if ($("chkPunch").checked == true){
+        $("divPunch").innerHTML = "He got knocked the F out, you take his gold";
+        IncreaseGold(RandomInt(0,10));
+        SaveGold();
+    }
+    if ($("chkShops").checked == true){
+        $("divShops").innerHTML = "A lantern catches your eye, it costs 20 gold.";
+        $("btnBuy").style.display = "inherit";
+    }
+    if ($("chkSwim").checked == true){
+        $("divSwim").innerHTML = "You found 2 gold while swimming.";
+        IncreaseGold(2);
+        SaveGold();
+    }
+    if ($("chkTalk").checked == true){
+        $("divTalk").innerHTML = "The maiden tells you of a cave nearby, but you will need something to light the way";
+    }
+}
+function Buy() {
+    if (gold >= 20) {
+        DecreaseGold(20);
+        SaveGold();
+        lantern = true;
+        localStorage.setItem(LANTERN, lantern);
+    }else {
+        alert("You don't have enough gold.")
+    }
+}
+function Enter() {
+    if (lantern == true){
+        window.location.href = "LitCave.html";
+    }else {
+        window.location.href = "InCave.html";
+    }
+}
+function Fall() {
+    $("divFall").innerHTML = "You stumble into the cave and trip over a massive ledge, falling to your death"
+    DeleteInformation();
+}
+function Fight() {
+
+}
+function Run() {
+
 }
